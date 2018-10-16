@@ -44,9 +44,26 @@ case n3
         puts "Você escolheu opção 5" 
     else # Define um valor padrão caso nenhuma condição seja satisfeita
         puts "Você não digitou entre 1 e 5"                            
-end        
+end     
 
-# 4) Operadores lógicos
+# 3) Estrututa condicional Ternária: 
+#   <condição> ? <verdadeiro> : <falso>
+
+sexo = 'M'
+
+=begin
+    if sexo == 'M'
+        puts 'Masculino'
+    else
+        puts 'Feminino'
+    end
+=end
+
+sexo == 'M' ? 'Masculino' : 'Feminino' # Forma Ternária
+
+#Ou sexo == 'M' ? (puts 'Masculino') : (puts 'Feminino')
+
+# 5) Operadores lógicos
 
 # '&&' ou 'and' = E
 # '||' ou 'or' = OU

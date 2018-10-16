@@ -40,6 +40,9 @@ Esse comando irá ler o arquivo Vagrantfile e executar a configuração do siste
 
     rails new meu_projeto
 
+    Ou informamos a versão do rails que quisermos utilizar caso exista mais de uma versão:
+    rails _5.2_ new meu_projeto
+
 # Acessar a pasta criada:
 
     cd meu_projeto

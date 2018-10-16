@@ -33,6 +33,12 @@ puts "Olá, #{nome1}, como vai?"
 v1 = 1000
 n1 = 'Gandalf'
 
+# Outra forma de concatenar seria com o operador '<<' (Shovel)
+# Assim como na interpolação, usando a pá (shovel) não é gerado um novo endereço de memória
+x = "rails"
+y = "curso" << x
+puts y # cursorails
+
 
 # 4) Comentário de mútiplas linhas
 
