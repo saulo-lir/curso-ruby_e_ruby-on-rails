@@ -1,0 +1,53 @@
+# Preparar ambiente de desenvolvimento na máquina virtual
+
+1) Instalar o virtual box
+2) Instalar o vagrant
+3) Instalar o git
+4) Instalar o plugin do vagrant para verificar se as versões do vagrant e virtual box
+estão compatíveis para não haver problema de conversação entre vagrant e virtual box
+   
+    vagrant plugin install vagrant-vbguest
+
+5) Clonar o repositório do curso que contém as configurações do Vagrantfile
+
+    git clone https://github.com/jacksonpires/curso-rails
+
+6) Entrar na pasta do projeto e rodar o comando:
+
+    vagrant up
+
+Esse comando irá ler o arquivo Vagrantfile e executar a configuração do sistema
+
+## Dicas de comandos para gerir sua box
+
+- Para pausar a box
+
+    vagrant suspend
+
+- Para iniciar/levantar a box
+
+    vagrant up
+
+
+- Para parar a box
+
+    vagrant halt
+
+7) Na máquina virtual, instalar o rails
+    gem install rails -v 5.2.0
+
+8) Criar um novo projeto rails:
+
+    rails new meu_projeto
+
+# Acessar a pasta criada:
+
+    cd meu_projeto
+
+# Levantar o servidor:
+
+    rails server
+
+# Acessar pelo navegador:
+
+    http://localhost:3000
