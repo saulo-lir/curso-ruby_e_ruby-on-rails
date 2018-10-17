@@ -1,0 +1,37 @@
+<h1>Seja bem vindo!</h1>
+<p>Curso Ruby</p>
+
+
+<p> Seu nome de trás para frente é: <%= "Saulo".reverse %> </p>
+
+<% a = "variável a" %>
+
+<p>Imprimindo a variável a: <%= a %> </p>
+
+<p><%#= Código comentado %></p>
+
+<p>A data de hoje é: <%= Date.today.strftime("%d/%m/%Y") %></p>
+
+<!-- Utilizando Helpers -->
+
+<!-- 1) Helper para links -->
+
+<ul>
+    <li>
+        <%= link_to "Cadastro de Modeadas", coins_path %>
+    </li>
+    <!-- 
+        Para verificar qual o path dessa rota, basta verificarmos no endereço
+        http://localhost:3000/rails/info/routes/
+        que acharemos a path em 'Path/Url'
+    -->
+
+</ul>
+
+<!-- 2) Utilizando helpers próprios  
+    data_br: Helper para formatar datas no padrão brasileiro
+    nome_aplicacao: Helper para exibir o nome do sistema
+-->
+
+<p>A data de hoje usando helper é: <%= data_br(Date.today) %></p>
+<p><%= nome_aplicacao %></p>
