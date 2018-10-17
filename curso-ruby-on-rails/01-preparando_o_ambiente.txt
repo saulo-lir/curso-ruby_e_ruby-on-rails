@@ -41,7 +41,10 @@ Esse comando irá ler o arquivo Vagrantfile e executar a configuração do siste
     rails new meu_projeto
 
     Ou informamos a versão do rails que quisermos utilizar caso exista mais de uma versão:
-    rails _5.2_ new meu_projeto
+    rails _5.2.0_ new meu_projeto
+
+    Se quisermos definir um outro banco de dados para o projeto (por padrão vem o sqlite) fazemos:
+    rails _5.2.0_ new meu_projeto -d mysql (ou o nome de outro banco)
 
 # Acessar a pasta criada:
 
