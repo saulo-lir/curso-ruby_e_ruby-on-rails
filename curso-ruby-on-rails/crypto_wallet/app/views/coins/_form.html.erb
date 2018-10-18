@@ -1,3 +1,15 @@
+<!--
+  helper form_with() = Renderiza um novo formulário html
+
+  coin = parâmetro utilizado para receber os dados do model.
+  o coin pode ter qualquer nome, desde que na view que esteja utilizando o helper form
+  esteja utilizando o mesmo nome
+
+  local:true = Indica que o formulário é local e não remoto (Usado com javascript)
+
+  do |form| = Passa os parâmetros informados para a variável nomeada de form
+-->
+
 <%= form_with(model: coin, local: true) do |form| %>
   <% if coin.errors.any? %>
     <div id="error_explanation">
@@ -11,8 +23,17 @@
     </div>
   <% end %>
 
-  <div class="field">    
+  <div class="field"> 
+    <!-- 
+      form.label :description irá ser renderizado como:
+      <label for="coin_description">Description</label> 
+    -->
     <%= form.label :description %>
+
+    <!-- 
+      form.text_field :description irá ser renderizado como:
+      <input type="text" name="coin[description]" id="coin_description" />
+    -->
     <%= form.text_field :description %>
   </div>
 
@@ -24,10 +45,15 @@
   <div class="field">
     <%= form.label :url_image %>
     <%= form.text_field :url_image %>
-    <%= image_tag coin.url_image, width:25, height:25 %>
+    <%#= image_tag coin.url_image, width:25, height:25 %>
   </div>
 
   <div class="actions">
+     <!-- 
+      form.text_field :description irá ser renderizado como:
+      <input type="submit" name="commit" value="Create Coin" data-disable-with="Create Coin" />
+    -->
+    
     <%= form.submit %>
   </div>
 <% end %>

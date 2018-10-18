@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_10_17_164221) do
 
-  create_table "coins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "coins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "description"
     t.string "acronym"
     t.string "url_image"

@@ -14,19 +14,9 @@
 
 <!-- Utilizando Helpers -->
 
-<!-- 1) Helper para links -->
+<!-- render: Renderiza uma página -->
 
-<ul>
-    <li>
-        <%= link_to "Cadastro de Modeadas", coins_path %>
-    </li>
-    <!-- 
-        Para verificar qual o path dessa rota, basta verificarmos no endereço
-        http://localhost:3000/rails/info/routes/
-        que acharemos a path em 'Path/Url'
-    -->
-
-</ul>
+<%= render "menu" %> <!-- Renderiza a partial chamada menu -->
 
 <!-- 2) Utilizando helpers próprios  
     data_br: Helper para formatar datas no padrão brasileiro
@@ -35,3 +25,8 @@
 
 <p>A data de hoje usando helper é: <%= data_br(Date.today) %></p>
 <p><%= nome_aplicacao %></p>
+
+<p>Você está em ambiente de <strong><%= ambiente_rails %></strong></p>
+
+<!-- Exibindo uma variável de instância/sessão vinda do controller -->
+<p>Exibindo uma variável de sessão: <strong><%= @nome %></strong></p>
