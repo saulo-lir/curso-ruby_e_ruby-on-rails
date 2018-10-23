@@ -13,4 +13,9 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+// require_tree (Desativado)
+//
+// O 'require_tree' vem do framework Asset Pipeline e tem a função de carregar a ávore de arquivos js
+// Os demais são plugins js
+//
+

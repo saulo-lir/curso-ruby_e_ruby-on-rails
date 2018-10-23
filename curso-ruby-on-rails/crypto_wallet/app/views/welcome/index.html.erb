@@ -1,6 +1,23 @@
-<h1>Seja bem vindo!</h1>
-<p>Curso Ruby</p>
+<p>
+    <%= link_to 'Português', '/?locale=pt-BR' %>
+</p>
 
+<p>
+                    <!-- Outra forma de definir o link -->
+    <%= link_to 'Inglês', root_path(locale: 'en') %>
+</p>
+
+<h1>Seja bem vindo!</h1>
+
+<!--Exibindo um Cookie definido no controller -->
+
+<p><%= cookies[:curso] %></p>
+<p><%= session[:curso] %></p>
+                                    <!-- locale: helper criado por mim -->
+<p>O idioma usado nessa aplicação é: <strong><%= locale %></strong></p>
+
+<!-- Traduzindo palavras com o I81n -->
+<p><%= I18n.t('hello') %></p>
 
 <p> Seu nome de trás para frente é: <%= "Saulo".reverse %> </p>
 
@@ -10,7 +27,15 @@
 
 <p><%#= Código comentado %></p>
 
+<!-- 
+    Data no padrão brasileiro usando a gem I18n
+    Podemos usar também apenas o l() que irá funcionar NESSA view
+-->
+<p>A data de hoje é: <%= I18n.l(Date.today) %></p>
+
+<!--    Data no padrão brasileiro usando ruby nativo
 <p>A data de hoje é: <%= Date.today.strftime("%d/%m/%Y") %></p>
+-->
 
 <!-- Utilizando Helpers -->
 

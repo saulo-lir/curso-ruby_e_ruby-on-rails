@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_17_164221) do
+ActiveRecord::Schema.define(version: 2018_10_19_132536) do
 
   create_table "coins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "description"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2018_10_17_164221) do
     t.string "url_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "mining_type_id"
+    t.index ["mining_type_id"], name: "index_coins_on_mining_type_id"
   end
 
+  create_table "mining_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "description"
+    t.string "acronym"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "coins", "mining_types"
 end

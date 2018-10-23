@@ -1,6 +1,6 @@
 class CoinsController < ApplicationController
   # Definindo um layout
-  layout "layout_teste"
+  # layout "layout_teste"
 
 =begin 
 
@@ -8,8 +8,9 @@ class CoinsController < ApplicationController
   nos métodos show, edit, update, destroy
 
 =end
-
   before_action :set_coin, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_mining_type_options, only: [:new, :create, :edit, :update]
 
   # GET /coins
   # GET /coins.json
@@ -106,6 +107,14 @@ class CoinsController < ApplicationController
 
       # permit = Filtra quais os campos que serão processados pelo sistema
 
-      params.require(:coin).permit(:description, :acronym, :url_image)
+      params.require(:coin).permit(:description, :acronym, :url_image, :mining_type_id)
+    end
+
+    # Método para selecionar todos os mining_types
+    def set_mining_type_options
+
+      @mining_type_options = MiningType.all.pluck(:description, :id)
+      # É a mesma coisa de:  MiningType.all.collect {|m| [m.description, m.id]}
+
     end
 end

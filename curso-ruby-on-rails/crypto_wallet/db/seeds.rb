@@ -21,20 +21,47 @@ dados, pois o próprio rails é que faz esse gerenciamento
 
 =end
 
-# Criando um registro
+# 1) Criando os registros padrões da tabela mining_types
+
+mining_types = [
+    {
+        description: "Proof of Work",
+        acronym: "PoW"
+    },
+    {
+        description: "Proof of State",
+        acronym: "PoS"
+    },
+    {
+        description: "Proof of Capacity",
+        acronym: "PoC"
+    }
+]
+
+mining_types.each do |mt|
+    MiningType.find_or_create_by!(mt)
+end
+
+
+
+# 2) Criando os registros padrões da tabela coins
 
 coins = [
     {description:"Bitcoin",
     acronym: "BTC",
-    url_image: "https://upload.wikimedia.org/wikipedia/commons/5/50/Bitcoin.png"},
-
+    url_image: "https://upload.wikimedia.org/wikipedia/commons/5/50/Bitcoin.png",
+    mining_type: MiningType.all.find_by(acronym: 'PoW')},
+    
     {description:"Ethereum",
     acronym: "ETH",
-    url_image: "https://s2.coinmarketcap.com/static/img/coins/200x200/1027.png"},
+    url_image: "https://s2.coinmarketcap.com/static/img/coins/200x200/1027.png",
+    mining_type: MiningType.all.sample},    
 
     {description:"Dash",
     acronym: "DASH",
-    url_image: "https://minhamoedavirtual.com.br/wp-content/uploads/2018/04/dash-logo.png"}
+    url_image: "https://minhamoedavirtual.com.br/wp-content/uploads/2018/04/dash-logo.png",
+    mining_type: MiningType.all.sample}
+   
 ]
 
 
@@ -65,5 +92,6 @@ Coin.create!([
 ])
 
 =end
+
 
 puts "Dados inseridos com sucesso!"

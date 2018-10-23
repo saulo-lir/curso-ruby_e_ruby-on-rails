@@ -6,11 +6,32 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Carrega o css de acordo com o model atual -->
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+    
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Carrega o css de acordo com o model atual -->
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+
+    <!--
+      'application' = Nome dos arquivos .css e .js
+    -->
+
+    <!-- Carrega jquery -->
+    <%= javascript_include_tag 'jquery', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
+  <!-- 
+    params[:controller] = O rails tem a chave reservada ':controller' na variável params
+    que contem o nome do controller que estamos usando na view que foi acessada
+  -->
+
   <body>
-    <h1>TOPO</h1>
+    <h1>TOPO - <%= params[:controller] %> </h1>
 
     <!-- 
       yield = Qualquer view utilizada no sistema 

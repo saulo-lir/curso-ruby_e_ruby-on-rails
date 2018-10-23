@@ -1,0 +1,8 @@
+# Criando a tradução das palavras para o português
+
+pt-BR:
+  hello: "Olá mundo!"
+  links:
+    show: "Mostrar"
+    edit: "Editar"
+    destroy: "Excluir"
